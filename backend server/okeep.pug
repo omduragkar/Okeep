@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okeep</title>
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous")
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Okeep</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="newadd1" aria-current="page" href="#">Add</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item disabled" href="#">Under Construction</a></li>
+                            <li>
+                                <hr class="dropdown-divider disabled">
+                            </li>
+                            <li><a class="dropdown-item active" href="/rate">Rate Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container w-100">
+        <div class="row">
+            <h1 class="col-sm-5 mx-5 my-3" style="display: inline-block;">Okeep</h1>
+            <button id="newadd" type="submit" style="font-size: larger;" class="col-sm-5 my-3 btn btn-primary mb-3">+ Add Note</button>
+            <button id="newadd12" style="font-size: larger; display:none;" class="col-sm-5 my-3 btn btn-outline-danger mb-3">Close </button>
+        </div>
+        <div id="addition" style="display:none;">
+            <div class="mb-3 mx-3 my-3">
+                <label for="exampleFormControlTextarea1"  class="form-label">Add Notes</label>
+                form(action="/add-note" method="post")
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                        <input id="om" name="title" type="text" class="form-control" placeholder="Add Title here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <textarea name="text" class="form-control" id="notetxt" placeholder="Add notes here" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    - var date = new Date ();//- Date updation not done
+                    //- input(type="button", name="date", value= date)
+                    //- button(disabled)= date   
+                    //- <button style="display:none" class="my-3 btn btn-outline-primary mb-3">Save</button>
+                    <button type="submit" id="addbtn" style="width:150px; font-size: x-large;" class="my-3 btn btn-outline-primary mb-3">Save</button>
+                    <input id="closebtn" style="width:150px; font-size: x-large;" type="button" class="my-3 btn btn-outline-danger mb-3" value="X">
+            </div>
+        </div>
+        <hr>
+        - var x=length; 
+        - var y = notes; 
+        <h1 class="mx-5 my-5">Saved Notes</h1>
+        h6.mx-5= x + " Notes" 
+        <hr>
+        - console.log(x);
+        - console.log(y);
+        <div id="addhere" class="row">
+        if x 
+            each val in y 
+                - var title = val.title;
+                - var text = val.text;
+                    <div class="card col-md-4 mx-3 my-3">
+                        <div class="card-body">
+                            h5.card-title= title 
+                            //- <h5 class="card-title">${aod}</h5>
+                            p.note-text= text
+                            p.note-text= val.date  
+                            //- <p class="card-text">${x}</p>
+                            a(href="/del-note?id="+ val._id).btn.btn-primary Delete Note 
+                            //- <a href="/del-note?id=" class="btn btn-primary">Delete Note</a>
+                            button(disabled).btn.btn-outline-secondary.mx-3 Update    
+                        </div>
+                </div>
+        else 
+            - console.log(x);
+            h4.card-title.text-center.my-5= x + " Notes.... The room is empty add some stuff..."
+        </div>
+    </div>
+    footer
+        p.text-center Om Duragkar<sup>&copy;</sup> 2021 Okeep v2.1 
+    //- script(src="../okeepcopy.js") 
+    script(src="/js/okeep.js")
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN") 
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous") 
+</body>
+    
+</html>
